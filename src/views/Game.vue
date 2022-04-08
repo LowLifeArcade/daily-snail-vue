@@ -54,12 +54,12 @@ section {
 }
 
 .game-window {
-  width: 100%;
   height: 100%;
-  padding: 10px;
-  /* background: rgb(23, 23, 23); */
-  box-shadow: inset 0 0 6px rgb(255, 254, 197),
-    inset 0 0 6px rgb(255, 255, 255);
+  width: 90vw;
+  display: flex;
+  background-color: rgba(254, 254, 230, 0.617);
+  box-shadow:  0 0 6px rgba(0, 0, 0, 0.676),
+     0 0 6px rgba(215, 215, 215, 0.782);
   border-radius: 5px;
 }
 .game-nav {

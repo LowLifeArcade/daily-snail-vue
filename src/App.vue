@@ -7,11 +7,9 @@
   /* variables */
   --page-gutter: 10px;
   --num-grid-columns: 10;
-  --gradient: linear-gradient(
-    to right top,
-    rgb(206, 112, 206),
-    rgb(87, 252, 208)
-  );
+  --gradient: linear-gradient(to right top, rgb(206, 112, 206), rgb(87, 252, 208));
+
+  
 
   font-family: Lato, Helvetica, Arial, sans-serif;
 
