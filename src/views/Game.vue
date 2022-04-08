@@ -9,17 +9,20 @@
       <button class="menu-button" @click="changeView('score')">Score</button>
     </div>
 
-    <div v-if="view === 'main'" class="info">MAIN</div>
-    <div v-if="view === 'info'" class="info">INFO</div>
-    <div v-if="view === 'game'" class="info">GAME</div>
-    <div v-if="view === 'score'" class="info">SCORE</div>
+    <div class="game-window">
+      <div v-if="view === 'main'" class="info"><MainVue /></div>
+      <div v-if="view === 'info'" class="info">INFO</div>
+      <div v-if="view === 'game'" class="info">GAME</div>
+      <div v-if="view === 'score'" class="info">SCORE</div>
+    </div>
   </section>
 </template>
 
 <script>
 import NavVue from '../components/NavVue.vue';
+import MainVue from '../components/Main.vue';
 export default {
-  components: { NavVue },
+  components: { NavVue, MainVue },
   data() {
     return {
       count: 0,
@@ -50,6 +53,15 @@ section {
   height: calc(100vh - 40px);
 }
 
+.game-window {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  /* background: rgb(23, 23, 23); */
+  box-shadow: inset 0 0 6px rgb(255, 254, 197),
+    inset 0 0 6px rgb(255, 255, 255);
+  border-radius: 5px;
+}
 .game-nav {
   margin: 20px;
 }
