@@ -6,11 +6,11 @@
           <h2>Snail SVG</h2>
         </a>
         <div class="nav-center">
-          <a class="nav-bar-item">link</a>
-          <a class="nav-bar-item">link</a>
-          <a class="nav-bar-item">link</a>
-          <a class="nav-bar-item">link</a>
-          <a class="nav-bar-item">link</a>
+          <router-link class="nav-bar-item" to="/">Home</router-link>
+          <router-link class="nav-bar-item" to="/game">Game</router-link>
+          <router-link class="nav-bar-item" to="/">Home</router-link>
+          <router-link class="nav-bar-item" to="/">Home</router-link>
+          <router-link class="nav-bar-item" to="/about">About</router-link>
         </div>
         <div class="user-menu">
           <div class="profile">Profile</div>
