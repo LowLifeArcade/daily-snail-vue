@@ -41,11 +41,13 @@ h1 {
   padding: 20px;
 }
 section {
+  background: var(--gradient);
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  height: calc(100vh - 40px);
 }
 
 .game-nav {
