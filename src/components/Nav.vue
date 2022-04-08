@@ -3,15 +3,15 @@
     <header>
       <nav>
         <a href="/" class="home">
-          <h2>The Daily Snail</h2>
+          <h2>Snail SVG</h2>
         </a>
-        <ul>
-          <li class="nav-bar-item">link</li>
-          <li class="nav-bar-item">link</li>
-          <li class="nav-bar-item">link</li>
-          <li class="nav-bar-item">link</li>
-          <li class="nav-bar-item">link</li>
-        </ul>
+        <div class="nav-center">
+          <a class="nav-bar-item">link</a>
+          <a class="nav-bar-item">link</a>
+          <a class="nav-bar-item">link</a>
+          <a class="nav-bar-item">link</a>
+          <a class="nav-bar-item">link</a>
+        </div>
         <div class="user-menu">
           <div class="profile">Profile</div>
           <div class="gear">Gear</div>
@@ -26,6 +26,12 @@ export default {};
 </script>
 
 <style scoped lang="scss">
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
 .grid-frame-global {
   z-index: 9998;
   width: 100%;
@@ -44,16 +50,36 @@ nav {
   height: 80px;
   /* background: sandybrown; */
   display: flex;
+
   justify-content: space-between;
   align-items: center;
-
-  ul {
-    display: flex;
-    list-style: none;
-    background: blue;
-  }
+}
+.nav-center {
+  display: flex;
+  flex: 1 1 auto;
+  text-align: center;
+  /* flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto; */
+  /* list-style: none; */
+  justify-content: center;
+  /* align-items: center; */
+  /* background: blue; */
+}
+.nav-bar-item {
+  padding: 0 20px;
 }
 .user-menu {
-  background-color: aqua;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row-reverse;
+  text-align: end;
+}
+
+.home {
+  width: 124px;
+}
+.gear {
+  width: 124px;
 }
 </style>
