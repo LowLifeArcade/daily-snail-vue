@@ -10,7 +10,12 @@
     <br />
     <code>
       <span class="green">>&nbsp;</span>
-      <input type="text" />
+      <input
+        data-value="input-1"
+        v-model="form.input1"
+        @keyup.enter="enter($event)"
+        type="text"
+      />
     </code>
     <!-- <br>
     <code>
@@ -18,17 +23,24 @@
       <input type="text" />
     </code> -->
   </div>
+  <pre>{{ form }}</pre>
+  <pre>{{ display }}</pre>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return { form: { input1: '' }, display: {} };
   },
   methods: {
-    inputEnter(val) {
-      this.data[val] = val;
+    enter(e) {
+      console.log('E: ', e.target.data-value)
+      this.display[e.target.data-value] = true;
     },
+
+    // inputEnter(e) {
+    //   this.display[e.target.data - value] = e.target.data - value;
+    // },
   },
 };
 </script>
