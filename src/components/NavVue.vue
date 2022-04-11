@@ -1,23 +1,27 @@
 <template>
-  <div class="grid-frame-global">
-    <header>
-      <nav>
-        <a href="/" class="home">
-          <h2>Snail SVG</h2>
-        </a>
-        <div class="nav-center">
-          <router-link class="nav-bar-item" to="/">Home</router-link>
-          <router-link class="nav-bar-item" to="/game">Game</router-link>
-          <router-link class="nav-bar-item" to="/">Home</router-link>
-          <router-link class="nav-bar-item" to="/">Home</router-link>
-          <router-link class="nav-bar-item" to="/about">About</router-link>
-        </div>
-        <div class="user-menu">
-          <div class="profile">Profile</div>
-          <div class="gear">Gear</div>
-        </div>
-      </nav>
-    </header>
+  <div class="container">
+    <div class="grid-frame-global">
+      <header>
+        <nav>
+          <a href="/" class="home">
+            <h2>Snail SVG</h2>
+          </a>
+          <div class="nav-center">
+            <router-link class="nav-bar-item" to="/">Home</router-link>
+            <router-link class="nav-bar-item" to="/game">Game</router-link>
+            <router-link class="nav-bar-item" to="/submission"
+              >Snail Me</router-link
+            >
+            <router-link class="nav-bar-item" to="/jobs">Jobs</router-link>
+            <router-link class="nav-bar-item" to="/about">About</router-link>
+          </div>
+          <div class="user-menu">
+            <div class="profile">Profile</div>
+            <div class="gear">Gear</div>
+          </div>
+        </nav>
+      </header>
+    </div>
   </div>
 </template>
 
@@ -81,5 +85,11 @@ nav {
 }
 .gear {
   width: 124px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

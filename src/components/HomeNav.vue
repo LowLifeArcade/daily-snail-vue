@@ -8,8 +8,8 @@
         <div class="nav-center">
           <router-link class="nav-bar-item" to="/">Home</router-link>
           <router-link class="nav-bar-item" to="/game">Game</router-link>
-          <router-link class="nav-bar-item" to="/">Home</router-link>
-          <router-link class="nav-bar-item" to="/">Home</router-link>
+          <router-link class="nav-bar-item" to="/submission">Snail Me</router-link>
+          <router-link class="nav-bar-item" to="/jobs">Jobs</router-link>
           <router-link class="nav-bar-item" to="/about">About</router-link>
         </div>
         <div class="user-menu">
@@ -31,6 +31,7 @@ a {
   justify-content: center;
   align-items: center;
   white-space: nowrap;
+  width: 124px;
 }
 .grid-frame-global {
   z-index: 9998;
@@ -57,7 +58,7 @@ nav {
 .nav-center {
   display: flex;
   flex: 1 1 auto;
-  text-align: center;
+  /* text-align: center; */
   /* flex-grow: 1;
   flex-shrink: 1;
   flex-basis: auto; */
@@ -74,12 +75,13 @@ nav {
   flex: 0 0 auto;
   flex-flow: row-reverse;
   text-align: end;
+  width: 124px;
 }
 
-.home {
+/* .home {
   width: 124px;
 }
 .gear {
   width: 124px;
-}
+} */
 </style>
