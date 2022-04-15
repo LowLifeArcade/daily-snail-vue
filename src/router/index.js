@@ -3,7 +3,7 @@ import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import Game from '../views/Game.vue';
 import SnailSubmission from '../views/SnailSubmission.vue'
-import Jobs from '../views/jobs.vue'
+import Jobs from '../views/Jobs.vue'
 
 const routes = [
   {
