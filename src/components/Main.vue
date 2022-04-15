@@ -4,7 +4,7 @@
       <code>
         <span class="blue">~/main-game</span>
         on
-        <span class="yellow">main</span>
+        <span class="yellow"><span class="branch"><i class="fa-solid fa-code-branch"></i></span>main</span>
         via
         <span class="green">v17.7.1</span>
         <br />
@@ -18,7 +18,7 @@
     <code>
       <span class="blue">~/main-game</span>
       on
-      <span class="yellow">main</span>
+      <span class="yellow"><span class="branch"><i class="fa-solid fa-code-branch"></i></span>main</span>
       via
       <span class="green">v17.7.1</span>
       <br />
@@ -75,6 +75,9 @@ export default {
 </script>
 
 <style scoped>
+.fa-fontawesome {
+  font-size: 1.6em;
+}
 code input {
   position: relative;
   left: -2px;
@@ -105,6 +108,9 @@ code input {
 }
 .yellow {
   color: yellow;
+}
+.branch {
+  font-size: 13px;
 }
 .blue {
   color: cyan;
