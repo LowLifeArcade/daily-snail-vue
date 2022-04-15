@@ -12,6 +12,7 @@
       <code>
         <span class="green">>&nbsp;</span>
         <input
+          :id="block"
           :data-value="block"
           v-model="form[`input${block}`]"
           @keyup.enter="enter($event)"
@@ -19,8 +20,20 @@
         />
         <br />
       </code>
-
     </div>
+    <code>
+      <span class="blue">~/main-game</span>
+      on
+      <span class="yellow">main</span>
+      via
+      <span class="green">v17.7.1</span>
+    </code>
+    <br />
+    <code>
+      <span class="green">>&nbsp;</span>
+      <input v-model="input" @keyup.enter="enter($event)" type="text" />
+      <br />
+    </code>
 
     <!-- <br>
     <code>
@@ -35,13 +48,14 @@
 <script>
 export default {
   data() {
-    return { form: { input1: '' }, display: {}, blocks: [1] };
+    return { input: '', form: { input1: '' }, display: {}, blocks: [] };
   },
   methods: {
     enter(e) {
       this.display['display' + e.target.dataset.value] = true;
       const newBlock = parseInt(e.target.dataset.value) + 1;
       this.blocks.push(newBlock);
+      this.input = ''
     },
 
     // inputEnter(e) {
@@ -52,6 +66,9 @@ export default {
     blocknumber: () => {
       this.block++;
     },
+  },
+  mounted() {
+    // this.$ref.ref1.focus();
   },
 };
 </script>
@@ -70,6 +87,7 @@ code input {
   outline-width: 0;
 } */
 .game {
+
   color: grey;
   width: calc(90vw - 20px);
   padding: 20px;
