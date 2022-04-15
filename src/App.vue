@@ -3,6 +3,22 @@
 </template>
 
 <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+html,
+body {
+  margin: 0;
+  background: white;
+}
 #app {
   /* variables */
   --page-gutter: 10px;
@@ -16,6 +32,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  
+
   line-height: 1.15;
 }
+
 </style>
