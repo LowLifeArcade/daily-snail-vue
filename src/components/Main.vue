@@ -1,5 +1,5 @@
 <template>
-  <div class="game">
+  <div class="game" @click="focusInput">
     <div v-for="block in blocks" :key="block.id">
       <code>
         <span class="blue">~/main-game</span>
@@ -25,6 +25,7 @@
       <span class="green">>&nbsp;</span>
 
       <input
+        ref="input"
         class="input"
         v-model="input"
         @keyup.enter="enter($event)"
@@ -32,15 +33,7 @@
       />
       <br />
     </code>
-
-    <!-- <br>
-    <code>
-      <span class="green">>&nbsp;</span>
-      <input type="text" />
-    </code> -->
   </div>
-  <!-- <pre>{{ form }}</pre> -->
-  <pre>{{ display }}</pre>
 </template>
 
 <script>
@@ -49,14 +42,18 @@ export default {
     return { input: '', form: { input1: '' }, display: {}, blocks: [] };
   },
   methods: {
+    focusInput() {
+      this.$refs.input.focus();
+    },
     enter(e) {
       // this.display['display' + e.target.dataset.value] = this.input;
       // const newBlock = parseInt(e.target.dataset.value) + 1;
       const newBlock = e.target.value;
-      if (newBlock === 'clear') {
-        window.location.reload();
-      }
       this.blocks.push(newBlock);
+      if (newBlock === 'clear') {
+        // window.location.reload();
+        this.blocks = [];
+      }
       this.input = '';
     },
 
@@ -71,6 +68,8 @@ export default {
   },
   mounted() {
     // this.$ref.ref1.focus();
+    this.$nextTick(() => this.$refs.input.focus());
+    console.log(this.$refs);
   },
 };
 </script>
