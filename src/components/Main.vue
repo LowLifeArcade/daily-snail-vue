@@ -4,7 +4,10 @@
       <code>
         <span class="blue">~/main-game</span>
         on
-        <span class="yellow"><span class="branch"><i class="fa-solid fa-code-branch"></i></span>main</span>
+        <span class="yellow"
+          ><span class="branch"><i class="fa-solid fa-code-branch"></i></span
+          >{{ branch }}</span
+        >
         via
         <span class="green">v17.7.1</span>
         <br />
@@ -18,7 +21,10 @@
     <code>
       <span class="blue">~/main-game</span>
       on
-      <span class="yellow"><span class="branch"><i class="fa-solid fa-code-branch"></i></span>main</span>
+      <span class="yellow"
+        ><span class="branch"><i class="fa-solid fa-code-branch"></i></span
+        >{{ branch }}</span
+      >
       via
       <span class="green">v17.7.1</span>
       <br />
@@ -39,7 +45,13 @@
 <script>
 export default {
   data() {
-    return { input: '', form: { input1: '' }, display: {}, blocks: [] };
+    return {
+      input: '',
+      form: { input1: '' },
+      display: {},
+      blocks: [],
+      branch: 'main',
+    };
   },
   methods: {
     focusInput() {
@@ -54,6 +66,12 @@ export default {
         // window.location.reload();
         this.blocks = [];
       }
+      if (
+        newBlock.split(' ')[0] === 'git' &&
+        newBlock.split(' ')[1] === 'branch'
+      ) {
+        this.branch = newBlock.split(' ')[2];
+      }
       this.input = '';
     },
 
@@ -67,9 +85,7 @@ export default {
     },
   },
   mounted() {
-    // this.$ref.ref1.focus();
     this.$nextTick(() => this.$refs.input.focus());
-    console.log(this.$refs);
   },
 };
 </script>
