@@ -1,46 +1,57 @@
 <template>
   <div class="game">
-    <code>
-      <span class="blue">~/main-game</span>
-      on
-      <span class="yellow">main</span>
-      via
-      <span class="green">v17.7.1</span>
-    </code>
-    <br />
-    <code>
-      <span class="green">>&nbsp;</span>
-      <input
-        data-value="input-1"
-        v-model="form.input1"
-        @keyup.enter="enter($event)"
-        type="text"
-      />
-    </code>
+    <div v-for="block in blocks" :key="block.id">
+      <code>
+        <span class="blue">~/main-game</span>
+        on
+        <span class="yellow">main</span>
+        via
+        <span class="green">v17.7.1</span>
+      </code>
+      <br />
+      <code>
+        <span class="green">>&nbsp;</span>
+        <input
+          :data-value="block"
+          v-model="form[`input${block}`]"
+          @keyup.enter="enter($event)"
+          type="text"
+        />
+        <br />
+      </code>
+
+    </div>
+
     <!-- <br>
     <code>
       <span class="green">>&nbsp;</span>
       <input type="text" />
     </code> -->
   </div>
-  <pre>{{ form }}</pre>
+  <!-- <pre>{{ form }}</pre> -->
   <pre>{{ display }}</pre>
 </template>
 
 <script>
 export default {
   data() {
-    return { form: { input1: '' }, display: {} };
+    return { form: { input1: '' }, display: {}, blocks: [1] };
   },
   methods: {
     enter(e) {
-      console.log('E: ', e.target.data-value)
-      this.display[e.target.data-value] = true;
+      this.display['display' + e.target.dataset.value] = true;
+      const newBlock = parseInt(e.target.dataset.value) + 1;
+      this.blocks.push(newBlock);
     },
 
     // inputEnter(e) {
     //   this.display[e.target.data - value] = e.target.data - value;
     // },
+  },
+  computed: {
+    blocknumber: () => {
+      this.block++;
+    },
   },
 };
 </script>
