@@ -7,31 +7,29 @@
         <span class="yellow">main</span>
         via
         <span class="green">v17.7.1</span>
-      </code>
-      <br />
-      <code>
-        <span class="green">>&nbsp;</span>
-        <input
-          :id="block"
-          :data-value="block"
-          v-model="form[`input${block}`]"
-          @keyup.enter="enter($event)"
-          type="text"
-        />
+        <br />
+        <span class="green">></span>
+        {{ block }}
+        <br />
         <br />
       </code>
     </div>
+
     <code>
       <span class="blue">~/main-game</span>
       on
       <span class="yellow">main</span>
       via
       <span class="green">v17.7.1</span>
-    </code>
-    <br />
-    <code>
+      <br />
       <span class="green">>&nbsp;</span>
-      <input v-model="input" @keyup.enter="enter($event)" type="text" />
+
+      <input
+        class="input"
+        v-model="input"
+        @keyup.enter="enter($event)"
+        type="text"
+      />
       <br />
     </code>
 
@@ -52,10 +50,14 @@ export default {
   },
   methods: {
     enter(e) {
-      this.display['display' + e.target.dataset.value] = true;
-      const newBlock = parseInt(e.target.dataset.value) + 1;
+      // this.display['display' + e.target.dataset.value] = this.input;
+      // const newBlock = parseInt(e.target.dataset.value) + 1;
+      const newBlock = e.target.value;
+      if (newBlock === 'clear') {
+        window.location.reload();
+      }
       this.blocks.push(newBlock);
-      this.input = ''
+      this.input = '';
     },
 
     // inputEnter(e) {
@@ -75,6 +77,8 @@ export default {
 
 <style scoped>
 code input {
+  position: relative;
+  left: -2px;
   width: 90%;
   color: gray;
   background: none;
@@ -87,7 +91,6 @@ code input {
   outline-width: 0;
 } */
 .game {
-
   color: grey;
   width: calc(90vw - 20px);
   padding: 20px;
@@ -96,6 +99,7 @@ code input {
   border-radius: 5px;
   background: rgb(23, 23, 23);
   box-shadow: inset 0 0 4px rgb(255, 254, 197), inset 0 0 2px rgb(255, 255, 255);
+  overflow: scroll;
 }
 .green {
   color: greenyellow;
